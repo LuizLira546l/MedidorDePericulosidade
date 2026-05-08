@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "SafeBusRJ" },
+      { name: "description", content: "Web app for visualizing geographic data and routes from CSV and GeoJSON files." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "SafeBusRJ" },
+      { property: "og:description", content: "Web app for visualizing geographic data and routes from CSV and GeoJSON files." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "SafeBusRJ" },
+      { name: "twitter:description", content: "Web app for visualizing geographic data and routes from CSV and GeoJSON files." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8ff6c69d-49cd-4b84-aa9c-91f0f3b32b94/id-preview-0f7b89ad--313424e3-02a3-41bb-8625-97db4b7e9290.lovable.app-1778272751351.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8ff6c69d-49cd-4b84-aa9c-91f0f3b32b94/id-preview-0f7b89ad--313424e3-02a3-41bb-8625-97db4b7e9290.lovable.app-1778272751351.png" },
     ],
     links: [
       {
