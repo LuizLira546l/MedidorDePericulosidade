@@ -1,26 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
+
+const SafetyApp = lazy(() => import("@/components/SafetyApp"));
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Rota Segura · Linhas de ônibus do Rio" },
+      { name: "description", content: "Estimativa de segurança das linhas de ônibus do município do Rio de Janeiro: traçado no mapa, médias e previsões de furtos, roubos e tiroteios." },
+      { property: "og:title", content: "Rota Segura · Linhas de ônibus do Rio" },
+      { property: "og:description", content: "Selecione uma linha e veja o traçado, médias dos últimos 12 meses e previsões para o próximo mês." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-muted-foreground">Carregando…</div>}>
+      <SafetyApp />
+    </Suspense>
+  );
 }
